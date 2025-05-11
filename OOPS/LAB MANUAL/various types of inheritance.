@@ -1,0 +1,63 @@
+// java program to implement various types of inheritance.
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+class Puppy extends Dog {
+    void weep() {
+        System.out.println("Puppy is weeping");
+    }
+}
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat is meowing");
+    }
+}
+interface Pet {
+    void play();
+}
+class Parrot extends Animal implements Pet {
+    void speak() {
+        System.out.println("Parrot is speaking");
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Parrot is playing");
+    }
+}
+
+public class Inheritances {
+    public static void main(String[] args) {
+        System.out.println("1");
+        Dog dog = new Dog();
+        dog.eat(); 
+        dog.bark(); 
+        System.out.println();
+
+        System.out.println("2");
+        Puppy puppy = new Puppy();
+        puppy.eat(); 
+        puppy.bark(); 
+        puppy.weep(); 
+        System.out.println();
+
+        System.out.println("3");
+        Cat cat = new Cat();
+        cat.eat(); 
+        cat.meow();
+        System.out.println();
+
+        System.out.println("4"); 
+        Parrot parrot = new Parrot();
+        parrot.eat(); 
+        parrot.speak(); 
+        parrot.play(); 
+    }
+}
