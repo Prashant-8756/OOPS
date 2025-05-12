@@ -1,0 +1,59 @@
+//Implement the concept of overloading.
+class MathOperations {
+    
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Overloadings {
+    public static void main(String[] args) {
+        MathOperations math = new MathOperations();
+
+        System.out.println("Sum of 2 and 3: " + math.add(2, 3)); // Calls add(int, int)
+        System.out.println("Sum of 2, 3 and 4: " + math.add(2, 3, 4)); // Calls add(int, int, int)
+        System.out.println("Sum of 2.5 and 3.5: " + math.add(2.5, 3.5)); // Calls add(double, double)
+    }
+}
+
+
+//Implement the concept of overriding.
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Overridings {
+    public static void main(String[] args) {
+        Animal myAnimal = new Animal();
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+
+        myAnimal.sound(); 
+        myDog.sound();    
+        myCat.sound();    
+    }
+}
