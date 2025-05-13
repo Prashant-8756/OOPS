@@ -1,0 +1,49 @@
+//Implement the concept of abstraction for the real world.
+abstract class Vehicle {
+    abstract void start();
+    abstract void stop();
+
+    void displayInfo() {
+        System.out.println("This is a vehicle.");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    void start() {
+        System.out.println("Car is starting.");
+    }
+
+    @Override
+    void stop() {
+        System.out.println("Car is stopping.");
+    }
+}
+
+class Bike extends Vehicle {
+    @Override
+    void start() {
+        System.out.println("Bike is starting.");
+    }
+
+    @Override
+    void stop() {
+        System.out.println("Bike is stopping.");
+    }
+}
+
+public class Absarcts {
+    public static void main(String[] args) {
+        Vehicle myCar = new Car();
+        myCar.displayInfo();
+        myCar.start();
+        myCar.stop();
+
+        System.out.println();
+
+        Vehicle myBike = new Bike();
+        myBike.displayInfo();
+        myBike.start();
+        myBike.stop();
+    }
+}
