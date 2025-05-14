@@ -1,0 +1,39 @@
+//a java program for nested class.
+class OuterClass {
+    private String outerField = "Outer Field";
+
+    static class StaticNestedClass {
+        void display() {
+            System.out.println("This is a static nested class.");
+            
+        }
+    }
+
+    class InnerClass {
+        void display() {
+            System.out.println("This is an inner class.");
+            System.out.println("Accessing: " + outerField);
+        }
+    }
+
+    void createInnerClass() {
+        InnerClass inner = new InnerClass();
+        inner.display();
+    }
+}
+
+public class nested {
+
+    public static void main(String[] args) {
+        
+        OuterClass.StaticNestedClass staticNested = new OuterClass.StaticNestedClass();
+        staticNested.display();
+
+        OuterClass outer = new OuterClass();
+ 
+        OuterClass.InnerClass inner = outer.new InnerClass();
+        inner.display();
+
+        outer.createInnerClass();
+    }
+}
