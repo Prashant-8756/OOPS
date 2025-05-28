@@ -1,0 +1,54 @@
+public class Car {
+    private String make;
+    private String model;
+    private int year;
+    private double speed;
+
+    public Car(String make, String model, int year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.speed = 0; // Initial speed is 0
+    }
+
+    public void accelerate(double increment) {
+        if (increment > 0) {
+            speed += increment;
+            System.out.println("Accelerated to: " + speed + " km/h");
+        } else {
+            System.out.println("Increment must be positive.");
+        }
+    }
+
+    public void brake(double decrement) {
+        if (decrement > 0 && speed - decrement >= 0) {
+            speed -= decrement;
+            System.out.println("Slowed down to: " + speed + " km/h");
+        } else {
+            System.out.println("Invalid brake amount.");
+        }
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public String getCarDetails() {
+        return "Car Make: " + make + ", Model: " + model + ", Year: " + year + ", Speed: " + speed + " km/h";
+    }
+
+    public static void main(String[] args) {
+        Car myCar = new Car("Toyota", "Camry", 2020);
+
+        System.out.println(myCar.getCarDetails());
+
+        myCar.accelerate(50);
+        myCar.accelerate(20);
+
+        myCar.brake(30);
+        myCar.brake(50); 
+
+        System.out.println("Current Speed: " + myCar.getSpeed() + " km/h");
+    }
+
+}
